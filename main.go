@@ -112,27 +112,26 @@ func main() {
 	g.prevUpdateTime = time.Now()
 	g.sinceStep = 0
 	g.life.FillRandom(200000)
-	for 
-	// rl.InitWindow(1000, 1000, "raylib [core] example - basic window")
-	// defer rl.CloseWindow()
+	rl.InitWindow(1000, 1000, "raylib [core] example - basic window")
+	defer rl.CloseWindow()
 
-	// rl.SetTargetFPS(120)
-	// rl.GetFrameTime()
+	rl.SetTargetFPS(120)
+	rl.GetFrameTime()
 
-	// for !rl.WindowShouldClose() {
-	// 	g.Update()
-	// 	rl.BeginDrawing()
+	for !rl.WindowShouldClose() {
+		g.Update()
+		rl.BeginDrawing()
 
-	// 	rl.ClearBackground(rl.RayWhite)
+		rl.ClearBackground(rl.RayWhite)
 
-	// 	rl.DrawFPS(0, 0)
-	// 	for y := 0; y < g.life.h; y++ {
-	// 		for x := 0; x < g.life.w; x++ {
-	// 			if cell, _ := g.life.Get(Point{x, y}); cell {
-	// 				rl.DrawRectangle(int32(x)*int32(g.zoom), int32(y)*int32(g.zoom), int32(g.zoom), int32(g.zoom), rl.Black)
-	// 			}
-	// 		}
-	// 	}
-	// 	rl.EndDrawing()
-	// }
+		rl.DrawFPS(0, 0)
+		for y := 0; y < g.life.h; y++ {
+			for x := 0; x < g.life.w; x++ {
+				if cell, _ := g.life.Get(Point{x, y}); cell {
+					rl.DrawRectangle(int32(x)*int32(g.zoom), int32(y)*int32(g.zoom), int32(g.zoom), int32(g.zoom), rl.Black)
+				}
+			}
+		}
+		rl.EndDrawing()
+	}
 }
